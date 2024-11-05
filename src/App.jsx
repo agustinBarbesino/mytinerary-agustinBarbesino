@@ -23,7 +23,7 @@ function App() {
 
   return (
     <>
-    <div className='bg-cover bg-center h-full' style={{backgroundImage: "url(" + '../public/images/background.jpg' + ")"}}>
+    <div className='bg-cover bg-repeat-y bg-center min-h-screen' style={{backgroundImage: "url(" + '../public/images/background.jpg' + ")"}}>
       <RouterProvider router={router}></RouterProvider>
     </div>
     </>

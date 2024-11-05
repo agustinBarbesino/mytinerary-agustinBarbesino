@@ -60,20 +60,24 @@ export default function CityDetails() {
             )}
             {status === 'succeeded' && city && (
                 <>
-                    <div className='w-4/5 sm:w-1/2 md:w-1/2 lg:w-1/2 h-80 flex flex-col lg:flex-row justify-between items-center p-3 m-3 bg-zinc-50 rounded-2xl shadow-md'>
-                        <div className='w-full lg:w-1/2 h-full overflow-hidden rounded-2xl'>
+                <div className='w-full h-full flex flex-col justify-between items-center'>
+                <div className='w-4/5 h-full sm:w-1/2 md:w-1/2 lg:w-1/2 flex flex-col lg:flex-row justify-evenly items-center p-3 m-3 bg-zinc-50 rounded-2xl shadow-md'>
+                        <div className='w-full lg:w-1/2 overflow-hidden rounded-2xl'>
                             <img className='w-full h-full object-cover' src={city.img} alt={city.name} />
                         </div>
-                        <div className='w-1/2 h-full flex justify-center items-center'>
-                            <h1 className='font-bold p-2'>{city.name}</h1>    
+                        <div className='w-1/2 h-full p-3 flex flex-col justify-center items-center'>
+                            <h1 className='font-bold p-2'>{city.name}</h1>
+                            <p className='text-justify'>{city.description}</p>    
                         </div>
                     </div>      
-                    <div>
+                    <div className='w-full h-auto'>
                         <Itineraries id={city._id}></Itineraries>
                     </div>
                     <div className='m-3'>
                         <Button onClick={handleClick} text={"Go Back to Cities"}></Button>
                     </div>
+                </div>
+                    
                 </>
             )}
             {status === 'succeeded' && !city && (

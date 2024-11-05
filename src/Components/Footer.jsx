@@ -4,7 +4,7 @@ import Button from "./Button"
 const Footer = () =>{
     return(
         <>
-            <div className="bg-white flex justify-between m-3 p-3">
+            <div className="h-24  bg-white flex justify-between m-3 p-3">
                 <div className="flex flex-col justify-between items-center">
                     <Button text={"Home"}></Button>
                     <Button text={"Cities"}></Button>
