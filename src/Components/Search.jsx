@@ -1,9 +1,12 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setSearch } from '../redux/actions/searchActions'
 
-function Search({search, setSearch}) {
-
+function Search() {
+    const dispatch = useDispatch();
+    const search = useSelector((state) => state.search.search);
     const handleChangeSearch = (e) => {
-        setSearch(e.target.value)
+        dispatch(setSearch(e.target.value))
     }
 
     return(
