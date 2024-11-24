@@ -1,7 +1,6 @@
-import { useState } from "react";
-import LoginButton from "./LoginButton"
+import { useState } from "react"
 import Button from "./Button"
-import NavBar from "./NavBar";
+import NavBar from "./NavBar"
 
 const Header = () => {
     return(
@@ -15,7 +14,6 @@ const Header = () => {
                 </div>
                 <div className="flex items-center gap-2 p-2">
                     <NavBar />
-                    <LoginButton />
                 </div>
             </div>
         </>

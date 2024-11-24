@@ -5,6 +5,10 @@ import CitiesPage from './Pages/CitiesPage'
 import Details from './Pages/Details'
 import './App.css'
 import StandardLayout from './Layouts/StandardLayout'
+import Login from './Pages/Login'
+import Register from './Pages/Register'
+import Profile from "./Pages/Profile"
+import PrivateRoute from "./Components/PrivateRoute"
 
 
 const router = createBrowserRouter([
@@ -13,7 +17,10 @@ const router = createBrowserRouter([
       { path: '/', element: <Home/> },
       { path: '/home', element: <Home/> },
       { path: '/cities', element: <CitiesPage/> },
-      { path: '/city/:id', element: <Details/>}
+      { path: '/city/:id', element: <Details/>},
+      { path: '/login', element: <Login/>},
+      { path: '/register', element: <Register/>},
+      { path: '/profile', element: (<PrivateRoute> <Profile /> </PrivateRoute>) }
     ]
   },
   
