@@ -13,10 +13,11 @@ export default function Cities() {
     const dispatch = useDispatch();
     const cities = useSelector((state) => state.cities.data);
     const status = useSelector((state) => state.cities.status);
+    const search = useSelector((state) => state.search.search)
 
     useEffect(() => {
-        dispatch(getCities());
-    }, [dispatch]);
+        dispatch(getCities(search));
+    }, [dispatch, search]);
 
     const navigate = useNavigate()
 
