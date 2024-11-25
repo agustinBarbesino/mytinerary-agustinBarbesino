@@ -1,8 +1,48 @@
 import { useEffect, useState } from "react";
 import CarouselTineraries from "./Carousel";
 import CallToAction from "./CallToAction";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams, useNavigate } from "react-router-dom";
+import { setUser } from "../redux/actions/authActions";
+import axios from "axios";
+
+const loginWithToken = async (token) => {
+    try {
+      console.log("Se ejecuto Login With Token");
+  
+      const response = await axios.get(
+        "http://localhost:8085/api/users/validateToken",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      return response.data.response;
+    } catch (error) {
+      console.log("error", error);
+    }
+  }
 
 const Main = () => {
+    
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        const params = new URLSearchParams(window.location.search);
+        const token = params.get("token");
+        if (token) {
+          localStorage.setItem("token", token);
+    
+          loginWithToken(token).then((user) => {
+            dispatch(setUser({ user, token }));
+          });
+          navigate("/")
+        }
+        
+      }, [dispatch,navigate])
+
     return(
         <>
             <div className="w-full min-h-full flex flex-col justify-between items-center p-3">

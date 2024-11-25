@@ -18,6 +18,10 @@ export default function SignIn() {
         dispatch(login({ email, password }))
     }
 
+    const handleLoginGoogle = () => {
+        window.location.href = "http://localhost:8085/api/auth/signIn/google"
+    }
+
     const loading = auth.loading
     const error = auth.error
     const isAuthenticated = auth.isAuthenticated
@@ -59,6 +63,14 @@ export default function SignIn() {
             Sign In
             </button>
         </div>
+        <div>
+          <button
+            type="button"
+            onClick={handleLoginGoogle}
+            className="p-2 m-2 font-bold text-white bg-blue-500 rounded-lg hover:bg-blue-700">
+            Sign In with Google
+            </button>
+        </div>
         <div className="mt-4">
           <button
             type="button"
@@ -68,6 +80,7 @@ export default function SignIn() {
             ¿You don´t have an account? Sign up here!
           </button>
         </div>
+        
     </form>
     </div>
   )

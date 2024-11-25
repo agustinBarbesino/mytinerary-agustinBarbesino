@@ -2,7 +2,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const registerUser = createAsyncThunk("REGISTER", async (userData) => {
-    user = {
+    let user = {
       name: userData.name,
       lastName: userData.lastName,
       email: userData.email,
