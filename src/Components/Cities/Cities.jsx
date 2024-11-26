@@ -1,10 +1,10 @@
 import React from 'react'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import Search from './Search'
+import Search from '../Header/Search'
 import CityCard from './CityCard'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCities, setCities } from '../redux/actions/citiesActions'
+import { getCities, setCities } from '../../redux/actions/citiesActions'
 
 
 

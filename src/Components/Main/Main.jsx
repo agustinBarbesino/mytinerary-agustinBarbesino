@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import CarouselTineraries from "./Carousel";
-import CallToAction from "./CallToAction";
+import CarouselTineraries from "../Carousel";
+import CallToAction from "../CallToAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useNavigate } from "react-router-dom";
-import { setUser } from "../redux/actions/authActions";
+import { setUser } from "../../redux/actions/authActions";
 import axios from "axios";
 
 const loginWithToken = async (token) => {

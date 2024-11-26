@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Button from "./Button"
+import Button from "../Button"
 import NavBar from "./NavBar"
 
 const Header = () => {

@@ -1,7 +1,7 @@
 import Itinerary from './Itinerary'
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getItineraries, toggleLike } from '../redux/actions/itinerariesActions';
+import { getItineraries, toggleLike } from '../../redux/actions/itinerariesActions';
   
 export default function Itineraries({ id }) {
   const dispatch = useDispatch();

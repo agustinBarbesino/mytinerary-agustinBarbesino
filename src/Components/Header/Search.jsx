@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setSearch } from '../redux/actions/searchActions'
+import { setSearch } from '../../redux/actions/searchActions'
 
 function Search() {
     const dispatch = useDispatch();

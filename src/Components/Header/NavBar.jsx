@@ -1,8 +1,8 @@
 import React from 'react'
 import { NavLink } from "react-router-dom"
 import { useSelector, useDispatch } from 'react-redux'
-import { logout } from '../redux/actions/authActions'
-import ProfileButton from './ProfileButton'  
+import { logout } from '../../redux/actions/authActions'
+import ProfileButton from '../ProfileButton'  
 
 const routes =[
     {to: "/" , text: "Home"},

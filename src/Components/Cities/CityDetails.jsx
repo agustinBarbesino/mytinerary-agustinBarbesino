@@ -2,8 +2,8 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCities } from '../redux/actions/citiesActions'
-import Button from './Button'
+import { getCities } from '../../redux/actions/citiesActions'
+import Button from '../Button'
 import Itineraries from './Itineraries'
 
 export default function CityDetails() {
