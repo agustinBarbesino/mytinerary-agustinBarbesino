@@ -42,7 +42,7 @@ export default function CityDetails() {
       }
     
       return (
-        <div className='h-screen flex flex-col justify-start items-center'>
+        <div className='h-full flex flex-col justify-start items-center'>
             {status === 'loading' && (
                 <p className='bg-white rounded-sm text-center text-2xl font-semibold p-2 mt-4'>
                     Loading city details...
@@ -60,17 +60,17 @@ export default function CityDetails() {
             )}
             {status === 'succeeded' && city && (
                 <>
-                <div className='w-full h-full flex flex-col justify-between items-center'>
-                <div className='w-4/5 h-full sm:w-1/2 md:w-1/2 lg:w-1/2 flex flex-col lg:flex-row justify-evenly items-center p-3 m-3 bg-zinc-50 rounded-2xl shadow-md'>
+                <div className='min-h-screen flex flex-col items-center'>
+                <div className='w-4/5 sm:w-1/2 md:w-1/2 lg:w-1/2 flex flex-col lg:flex-row justify-evenly items-center p-3 m-3 bg-zinc-50 rounded-2xl shadow-md'>
                         <div className='w-full lg:w-1/2 overflow-hidden rounded-2xl'>
                             <img className='w-full h-full object-cover' src={city.img} alt={city.name} />
                         </div>
-                        <div className='w-1/2 h-full p-3 flex flex-col justify-center items-center'>
+                        <div className='w-1/2 p-3 flex flex-col justify-center items-center'>
                             <h1 className='font-bold p-2'>{city.name}</h1>
                             <p className='text-justify'>{city.description}</p>    
                         </div>
                     </div>      
-                    <div className='w-full h-auto'>
+                    <div className='h-full'>
                         <Itineraries id={city._id}></Itineraries>
                     </div>
                     <div className='m-3'>

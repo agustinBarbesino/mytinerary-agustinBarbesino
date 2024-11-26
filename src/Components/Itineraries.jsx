@@ -17,12 +17,12 @@ export default function Itineraries({ id }) {
   };
   
   return (
-    <div className='w-full h-full flex flex-col justify-evenly items-center'>
+    <div className='w-full min-h-screen flex justify-center'>
         {status === 'loading' && <p>Cargando itinerarios...</p>}
         {status === 'failed' && <p>Error al cargar itinerarios</p>}
         {status === 'succeeded' && (
           <>
-          <div className='w-3/5 h-full p-3 flex flex-col justify-between items-center rounded-2xl shadow-sm'>
+          <div className='w-3/5 p-3 flex flex-col justify-start items-center rounded-2xl shadow-sm'>
           {itineraries.map((itinerary) => (
             <Itinerary 
                 userName={itinerary.userName} 
