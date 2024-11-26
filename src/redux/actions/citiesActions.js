@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { createAsyncThunk, createAction } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 export const getCities = createAsyncThunk('GET_CITIES', async (search = '', { rejectWithValue }) => {
@@ -10,3 +10,5 @@ export const getCities = createAsyncThunk('GET_CITIES', async (search = '', { re
     }
   }
 )
+
+export const setCities = createAction("SET_CITIES")

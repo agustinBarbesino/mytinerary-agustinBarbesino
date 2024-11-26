@@ -4,20 +4,28 @@ import { useNavigate } from 'react-router-dom'
 import Search from './Search'
 import CityCard from './CityCard'
 import { useSelector, useDispatch } from 'react-redux'
-import { getCities } from '../redux/actions/citiesActions'
+import { getCities, setCities } from '../redux/actions/citiesActions'
 
 
 
 export default function Cities() {
 
     const dispatch = useDispatch();
-    const cities = useSelector((state) => state.cities.data);
-    const status = useSelector((state) => state.cities.status);
+    const cities = useSelector((state) => state.cities.data)
+    const status = useSelector((state) => state.cities.status)
     const search = useSelector((state) => state.search.search)
+    const filteredCities = useSelector((state => state.cities.filteredCities))
 
     useEffect(() => {
-        dispatch(getCities(search));
-    }, [dispatch, search]);
+        dispatch(getCities());
+    }, [dispatch]);
+
+    useEffect(() => {
+        const filtered = cities.filter((city) =>
+            city.name.toLowerCase().includes(search.toLowerCase())
+        );
+        dispatch(setCities(filtered));
+    }, [dispatch, search, cities]);
 
     const navigate = useNavigate()
 
@@ -43,7 +51,7 @@ export default function Cities() {
                         <Search />
                     </div>
                     <div className='w-full h-full flex justify-center flex-wrap'>
-                        {cities.map(city => (
+                        {filteredCities.map(city => (
                             <CityCard 
                                 key={city.id} 
                                 name={city.name} 
